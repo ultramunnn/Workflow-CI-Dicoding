@@ -33,3 +33,4 @@ if __name__ == "__main__":
         
         # Model sudah otomatis tersimpan ke MLflow berkat autolog()
         # Trigger GitHub Action clean
+        # Trigger via MLProject modification
