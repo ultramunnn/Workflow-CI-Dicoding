@@ -44,5 +44,5 @@ jobs:
     - name: Build and Push Docker Image using MLflow
       run: |
         RUN_ID=$(ls -t MLProject/mlruns/0 | head -n 1)
-        mlflow models build-docker -m "MLProject/mlruns/0/$RUN_ID/artifacts/model" -n "${{ secrets.DOCKER_USERNAME }}/dicoding-msml-model:latest"
+        mlflow models build-docker -m "MLProject/mlruns/0/$RUN_ID/artifacts/model" -n "${{ secrets.DOCKER_USERNAME }}/dicoding-msml-model:latest" --env-manager=local
         docker push "${{ secrets.DOCKER_USERNAME }}/dicoding-msml-model:latest"
